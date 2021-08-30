@@ -17,10 +17,17 @@ layout: default
     {%- endif -%}
     {%- if page.author -%}
       <span> • </span>
-      {% for author in page.author %}
+      {% for authorid in page.author %} {% assign author =
+        site.data.authors[authorid] %}
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          {{ author }}
-        </span>
+      {%- if author.email -%}
+      <a href="mailto: {{ author.email }}"
+      ><span itemprop="name">{{ author.name }}</span></a
+      >
+      {%- else -%}
+      {{ author.name }}
+      {%- endif -%}
+      </span>
         {%- if forloop.last == false %}, {% endif -%}
       {% endfor %}
     {%- endif -%}
