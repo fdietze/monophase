@@ -27,7 +27,7 @@ layout: default
         ><span itemprop="name">{{ author.name }}</span></a
       >
       {%- else -%}
-      {{ author.name }}
+      {{ author.name | authorid }}
       {%- endif -%}
     </span>
     {%- if forloop.last == false %}, {% endif -%} {% endfor %} {%- endif -%} {%
