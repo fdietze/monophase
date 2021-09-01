@@ -19,15 +19,15 @@ layout: default
     </time>
     {%- endif -%} {%- if page.author -%}
     <span> • </span>
-    {% for authorid in page.author %} {% assign author =
-    site.data.authors[authorid] %}
+    {% for author in page.author %} {% assign authorDetails =
+    site.data.authors[author] %}
     <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-      {%- if author.email -%}
-      <a href="mailto:{{ author.email }}"
-        ><span itemprop="name">{{ author.name }}</span></a
+      {%- if authorDetails.email -%}
+      <a href="mailto:{{ authorDetails.email }}"
+        ><span itemprop="name">{{ author }}</span></a
       >
-      {%- else -%}
-      {{ author.name | authorid }}
+      {{ authorid }} {%- else -%}
+      {{ author }}
       {%- endif -%}
     </span>
     {%- if forloop.last == false %}, {% endif -%} {% endfor %} {%- endif -%} {%
