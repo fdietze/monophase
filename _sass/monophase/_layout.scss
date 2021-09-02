@@ -279,9 +279,14 @@ a.pagination-item:hover {
   margin: var(--spacer) 0;
   height: calc(var(--body-line-height) * var(--body-font-size));
 }
+
 .social-icon-item {
   float: right;
   margin-right: var(--spacer);
+}
+
+a.social-icon {
+  color: var(--oc-gray-4);
 }
 
 @media screen and (min-width: $md-screen) {
