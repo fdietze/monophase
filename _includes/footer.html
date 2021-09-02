@@ -12,7 +12,11 @@
         {%- endunless -%}
         <time datetime="{{ date_to }}">{{ year_to }}</time>
         {%- if site.author -%}
-          &nbsp;<a href="{{ site.author.url }}" target="_blank">{{ site.author.name }}</a>
+          {%- if site.author.url -%}
+            &nbsp;<a href="{{ site.author.url }}" target="_blank">{{ site.author.name }}</a>
+          {%- else %}
+            {{ site.author.name }}
+          {%- endif -%}
         {%- endif -%}
         . All right reserved.
       </small>
