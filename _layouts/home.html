@@ -8,7 +8,7 @@ layout: default
     {% assign posts = paginator.posts %}
   {% endif %}
   {% for post in posts %}
-    {% unless post.tags contains 'draft' %}
+    {% unless post.draft %}
     <div class="post">
       <h2 class="post-title">
         <a href="{{ post.url | relative_url }}">
